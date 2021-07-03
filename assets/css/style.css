@@ -1,6 +1,10 @@
 
 body{
 	font-family: 'Roboto';
+	/*gradient for background from uigradient.com*/
+	background: #c2e59c;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -8,7 +12,7 @@ body{
 	/*border: grey solid 1px;*/
 	width: 360px;
 	margin: 100px auto;
-	background-color: #949494;
+	background-color: #c1c1c1;
 	/*box-shadow: 3px 3px 3px grey;*/
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -29,6 +33,11 @@ h1{
 	font-weight: 300;
 }
 
+.fa-pencil-alt{
+	float: right;
+	padding-right: 10px ;
+}
+
 ul{
 	list-style: none;
 	padding: 0;
@@ -38,21 +47,55 @@ ul{
 li{
 	background-color: #fff;
 	height: 40px;
-	padding: 0 10px ;
+	padding: 0 5px 0 0 ;
 	line-height: 40px;
 	color: #666;
 }
 
 li:nth-child(2n){
-	background-color: #949494 ;
+	background-color: #c1c1c1;
+}
+
+li:nth-child(2n) i{
+	color: #c1c1c1;
+}
+
+
+span{
+	background-color: #e74c3c;
+	height: 40px;
+	margin-right: 20px;
+	text-align: center;
+	color: white;
+	width: 0px;
+	display: inline-block;
+	transition: 0.3s linear;
+	opacity: 0;  /* hide the element colt's way */
+}
+.fa-trash-alt{
+	visibility: inherit;
+}
+
+/*when hovering over li span is selected and span is displayed at 40px width */
+li:hover span, li:hover i{  /* this is a tricky part you need to style span as well as <i> else on grey background it'll show white icon */
+	width: 40px;
+	color: white;
+	opacity: 1.0;
 }
 
 input{
 	border: 0;
 	font-size: 20px;
-	background-color: #949494;
+	background-color: #c1c1c1;
 	width: 100%;
 	padding: 15px 15px 15px 10px;
 	box-sizing: border-box;
 	color: #2980b9;
+/*	border: 3px solid rgba(0, 0, 0, 0);*/
+}
+
+/*For input border focus*/
+input:focus{
+	background-color: white;
+	border: 2px solid #c1c1c1;
 }
