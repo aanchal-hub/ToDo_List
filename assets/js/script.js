@@ -39,6 +39,11 @@ $("input[type='text']").keypress(function(e){
 		var newTodo = $(this).val(); // get value
 		$(this).val(""); // set value to blank 
 		//create a new li and add to ul
-		$("ul").append("<li><span><i class="fas fa-trash-alt"></i></span> " + newTodo + "</li>"); // append new li to ul
+		$("ul").append("<li><span><i class= 'fas fa-trash-alt'></i></span> " + newTodo + "</li>"); // append new li to ul
 	}
+});
+
+//TOGGLE INPUT SPACE
+$(".fa-pencil-alt").click(function(){
+	$("input[type = 'text']").fadeToggle();
 });
