@@ -33,7 +33,7 @@ h1{
 	font-weight: 300;
 }
 
-.fa-pencil-alt{
+.fa-plus{
 	float: right;
 	padding-right: 10px ;
 }
@@ -47,7 +47,7 @@ ul{
 li{
 	background-color: #fff;
 	height: 40px;
-	padding: 0 5px 0 0 ;
+	padding: 0 ;
 	line-height: 40px;
 	color: #666;
 }
@@ -56,31 +56,37 @@ li:nth-child(2n){
 	background-color: #c1c1c1;
 }
 
-li:nth-child(2n) i{
+li:nth-child(2n) .fa-trash-alt .fa-pencil-alt{
 	color: #c1c1c1;
-}
 
+}
 
 span{
-	background-color: #e74c3c;
-	height: 40px;
-	margin-right: 20px;
-	text-align: center;
-	color: white;
+	float: right;
 	width: 0px;
-	display: inline-block;
+	text-align: center;
 	transition: 0.3s linear;
-	opacity: 0;  /* hide the element colt's way */
+	opacity: 0;
+
 }
 .fa-trash-alt{
-	visibility: inherit;
+	width: 0;
+	float: none;
+	color: red;
+}
+.fa-pencil-alt{
+	width: 0;
+	float: none;
+	color: green;
 }
 
-/*when hovering over li span is selected and span is displayed at 40px width */
-li:hover span, li:hover i{  /* this is a tricky part you need to style span as well as <i> else on grey background it'll show white icon */
-	width: 40px;
-	color: white;
-	opacity: 1.0;
+li:hover span{
+	width: 50px;
+	opacity: 1;
+}
+
+li:hover .fa-pencil-alt, li:hover .fa-trash-alt{
+	width: 50px;
 }
 
 input{

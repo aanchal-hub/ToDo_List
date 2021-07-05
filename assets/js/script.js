@@ -1,6 +1,6 @@
 //CHECK OFF SPECIFIC TODOS BY CLICKING
-$("ul").on('click', "li", function(){ // select parent element ul and on('click') on li for upcoming changes
-	$(this).toggleClass("completed"); //one line instead of below code
+$("ul").on('click', ".fa-pencil-alt", function(){ // select parent element ul and on('click') on li for upcoming changes
+	$(this).parent().parent().toggleClass("completed"); //one line instead of below code
 	//to understand above concept
 	// //check if li is grey
 	// if ($(this).css("color") === "rgb(128, 128, 128)"){
@@ -17,8 +17,8 @@ $("ul").on('click', "li", function(){ // select parent element ul and on('click'
 
 //CLICK ON X TO DELETE A TODO
 //event  bubbling occurs here i.e. events of parent elements are triggered span>li>ul>body>
-$("ul").on('click', "span", function(event){
-	$(this).parent().fadeOut(500, function(){ //selecting span element through first this, then selecting parent element li
+$("ul").on('click', ".fa-trash-alt", function(event){
+	$(this).parent().parent().fadeOut(500, function(){ //selecting span element through first this, then selecting parent element li
 											  // giving a fadeOut effect which just fades out doesn't remove
 											  // so giving effects for 500ms and removing it using function
 		$(this).remove();					  // here second this is parent element li and removing li then
@@ -39,11 +39,11 @@ $("input[type='text']").keypress(function(e){
 		var newTodo = $(this).val(); // get value
 		$(this).val(""); // set value to blank 
 		//create a new li and add to ul
-		$("ul").append("<li><span><i class= 'fas fa-trash-alt'></i></span> " + newTodo + "</li>"); // append new li to ul
+		$("ul").append("<li> " + newTodo + "<span><i class= 'fas fa-trash-alt'></i></span><span><i class= 'fas fa-pencil-alt'></i></span></li>"); // append new li to ul
 	}
 });
 
 //TOGGLE INPUT SPACE
-$(".fa-pencil-alt").click(function(){
+$(".fa-plus").click(function(){
 	$("input[type = 'text']").fadeToggle();
 });
