@@ -32,7 +32,17 @@ $("ul").on('click', ".fa-trash-alt", function(event){
 // click() only adds listeners to existing element and
 // on('click') add listeners to all potential upcoming future elements
 
-// 
+//CREATING A TODO THROUGH INPUT
+$("input[type='text']").keypress(function(e){
+	if (e.which === 13){
+		//grabbing the new todo from input
+		var newTodo = $(this).val(); // get value
+		$(this).val(""); // set value to blank 
+		//create a new li and add to ul
+		$("ul").append("<li> " + newTodo + "<span><i class= 'fas fa-trash-alt'></i></span><span><i class= 'fas fa-pencil-alt'></i></span></li>"); // append new li to ul
+	}
+});
+
 //TOGGLE INPUT SPACE
 $(".fa-plus").click(function(){
 	$("input[type = 'text']").fadeToggle();
