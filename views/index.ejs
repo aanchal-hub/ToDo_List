@@ -14,9 +14,11 @@
  	<div id="container">
  		<h1>To-Do List  <i class="fa fa-plus" aria-hidden="true"></i>
 </h1>
- 		<input type="text" placeholder="Add new To-Do">
+ 		<form action="/" method="POST"><input type="text" placeholder="Add new To-Do" name="content"></form>
  		<ul>
- 			<li> Get groceries <span><i class="fas fa-trash-alt"></i></span><span><i class="fas fa-pencil-alt"></i></span></li>
+ 			<% lists.forEach(function(data){ %>
+ 			<li> <%= data.content %> <span><i class="fas fa-trash-alt"></i></span><span><i class="fas fa-pencil-alt"></i></span></li>
+ 			<% }); %>
  			<li> Do laundry <span><i class="fas fa-trash-alt"></i></span><span><i class="fas fa-pencil-alt"></i></span></li>
  			<li> Cook dinner <span><i class="fas fa-trash-alt"></i></span><span><i class="fas fa-pencil-alt"></i></span></li>
  			<li> Do homework <span><i class="fas fa-trash-alt"></i></span><span><i class="fas fa-pencil-alt"></i></span></li>
